@@ -1,8 +1,3 @@
-import { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { Float } from '@react-three/drei';
-import * as THREE from 'three';
-
 export default function ThreeHero() {
   return (
     <div style={{ width: '100%', height: '90vh', position: 'relative', background: 'transparent' }}>
