@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Sphere, Torus, Octahedron, Text } from '@react-three/drei';
+import { Float, Text } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface SkillIconProps {
