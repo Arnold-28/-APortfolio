@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #020617;
+  color: white;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Layout helpers */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Navbar */
+.navbar { background: linear-gradient(90deg,#020617 0%, rgba(2,6,23,0.7) 100%); position: sticky; top:0; z-index:40; }
+.nav-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 24px; max-width:1100px; margin:0 auto; }
+.brand { margin:0; font-weight:700; letter-spacing:0.5px; }
+.nav-links { display:flex; gap:18px; align-items:center; }
+.nav-links a { color:rgba(255,255,255,0.9); text-decoration:none; padding:8px 10px; border-radius:6px; transition:background .18s, color .18s; }
+.nav-links a:hover { background: rgba(255,255,255,0.04); }
+.nav-toggle { display:none; background:none; border:0; width:36px; height:36px; align-items:center; justify-content:center; cursor:pointer; }
+.nav-toggle span{ display:block; height:2px; width:20px; background:white; margin:4px 0; border-radius:2px; transition:transform .25s, opacity .2s; }
+.nav-toggle.open span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2){ opacity:0; }
+.nav-toggle.open span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+/* Hero */
+.hero { min-height: 80vh; display:flex; align-items:center; }
+.hero-inner { display:flex; gap:40px; align-items:center; justify-content:space-between; width:100%; max-width:1100px; margin:0 auto; padding:40px 20px; }
+.hero-text h1{ font-size: clamp(2rem, 5vw, 3.2rem); margin:0 0 12px 0; }
+.subtitle{ color: rgba(255,255,255,0.8); margin-bottom:18px; }
+.hero-ctas { display:flex; gap:12px; }
+.btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:8px; text-decoration:none; }
+.btn.primary{ background:linear-gradient(90deg,#ff8a00,#ff3d00); color:#0b0b0b; font-weight:600; }
+.btn.outline{ border:1px solid rgba(255,255,255,0.08); color:inherit; }
+.btn.small{ padding:8px 12px; }
+
+.hero-visual .device-mock{ width:220px; height:140px; border-radius:14px; background: linear-gradient(135deg,#111827,#1f2937); box-shadow: 0 8px 30px rgba(2,6,23,0.7); display:flex; align-items:center; justify-content:center; }
+.device-mock .screen{ width:86%; height:76%; background: linear-gradient(180deg,#0ea5a5,#60a5fa); border-radius:8px; }
+
+section{ padding:64px 20px; }
+
+/* Projects */
+.section-header{ max-width:1100px; margin:0 auto 32px; padding:0 20px; }
+.section-header h2{ margin:0 0 8px 0; }
+.section-header .muted{ color: rgba(255,255,255,0.7); }
+.projects-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:20px; max-width:1100px; margin:0 auto; padding:0 20px; }
+.project-card{ background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; min-height:220px; transition:transform .18s, box-shadow .18s; }
+.project-card:hover{ transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.6); }
+.project-card .thumb{ height:120px; background: linear-gradient(135deg,#111827,#0f172a); }
+.project-body{ padding:16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.project-body h3{ margin:0; }
+.desc{ color: rgba(255,255,255,0.85); margin:0; }
+.tech{ color: rgba(255,255,255,0.6); font-size:0.9rem; }
+.project-actions{ margin-top:auto; display:flex; gap:8px; align-items:center; }
+.btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); color:inherit; display:inline-flex; padding:8px 10px; border-radius:8px; }
+
+/* Responsive */
+@media (max-width: 860px){
+  .nav-toggle{ display:flex; }
+  .nav-links{ position:fixed; right:16px; top:72px; background:rgba(2,6,23,0.96); flex-direction:column; padding:12px; border-radius:8px; gap:8px; display:none; }
+  .nav-links.open{ display:flex; }
+  .hero-inner{ flex-direction:column-reverse; gap:20px; padding:24px 20px; }
+  .hero-visual{ display:flex; }
+}
+
+@media (max-width: 768px) {
+  canvas { touch-action: none; }
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .project-card{ will-change: transform; }
+}
+
+/* Three.js canvas styles */
+.three-container{ width:100%; height:60vh; max-width:1100px; margin:0 auto; padding:20px; box-sizing:border-box; }
+.three-canvas{ width:100%; height:100%; display:block; border-radius:12px; background: linear-gradient(180deg,#071026,#07121a); }
+
